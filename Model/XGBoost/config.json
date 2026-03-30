@@ -1,0 +1,5 @@
+{
+    "model_type": "xgboost",
+    "framework": "sklearn",
+    "task": "regression"
+}
