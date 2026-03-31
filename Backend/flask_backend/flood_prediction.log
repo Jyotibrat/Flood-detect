@@ -1,0 +1,124 @@
+2026-03-31 04:11:12,706 [WARNING] services.models: XGBoost model not found at G:\VS Code Programs\Projects\Working\temp of flood detect app\Backend\flask_backend\models\xgboost_flood_model.json. Using heuristic fallback.
+2026-03-31 04:11:12,706 [WARNING] services.models: RL model not found at G:\VS Code Programs\Projects\Working\temp of flood detect app\Backend\flask_backend\models\rl_flood_model.pth. Using heuristic fallback.
+2026-03-31 04:11:12,707 [INFO] __main__: Starting Flood Prediction API on port 5000
+2026-03-31 04:11:12,725 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.25.244.69:5000
+2026-03-31 04:11:12,725 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-03-31 04:11:45,135 [INFO] __main__: [20260330224145135357] Received prediction request
+2026-03-31 04:11:45,136 [INFO] __main__: [20260330224145135357] Processing prediction for (28.6139, 77.209)
+2026-03-31 04:11:45,136 [INFO] services.weather: Fetching weather data from 2026-03-20 to 2026-03-29 for (28.6139, 77.209)
+2026-03-31 04:11:47,505 [INFO] services.weather: Successfully fetched 10 days of weather data
+2026-03-31 04:11:47,505 [INFO] __main__: [20260330224145135357] Fetched 10 days of weather data
+2026-03-31 04:11:47,511 [INFO] services.models: Preprocessed features: shape=(1, 12), total_precip=13.0mm, avg_humidity=59.1%
+2026-03-31 04:11:47,511 [INFO] __main__: [20260330224145135357] Preprocessed features for model input
+2026-03-31 04:11:47,512 [INFO] services.models: Heuristic (xgboost) prediction: prob=0.1836, conf=0.4430, factors=[('precipitation', '0.13'), ('max_daily_precip', '0.18'), ('humidity', '0.18'), ('soil_moisture', '0.38'), ('consecutive_rain', '0.29'), ('precip_trend', '0.00')]
+2026-03-31 04:11:47,512 [INFO] __main__: [20260330224145135357] XGBoost prediction: {'prediction': 'No Flood', 'probability': np.float64(0.1836), 'confidence': np.float64(0.443)}
+2026-03-31 04:11:47,512 [INFO] services.models: Heuristic (rl) prediction: prob=0.1994, conf=0.4208, factors=[('precipitation', '0.13'), ('max_daily_precip', '0.18'), ('humidity', '0.18'), ('soil_moisture', '0.38'), ('consecutive_rain', '0.29'), ('precip_trend', '0.00')]
+2026-03-31 04:11:47,512 [INFO] __main__: [20260330224145135357] RL prediction: {'prediction': 'No Flood', 'probability': np.float64(0.1994), 'confidence': np.float64(0.4208)}
+2026-03-31 04:11:47,513 [WARNING] services.gemini: Gemini API key not configured
+2026-03-31 04:11:47,513 [INFO] __main__: [20260330224145135357] Gemini analysis complete: source=xgboost
+2026-03-31 04:11:47,513 [INFO] __main__: [20260330224145135357] Prediction complete - Status: success, Final: No Flood
+2026-03-31 04:11:47,514 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 04:11:47] "POST /predict HTTP/1.1" 200 -
+2026-03-31 04:11:58,572 [INFO] __main__: [20260330224158572310] Received prediction request
+2026-03-31 04:11:58,572 [INFO] __main__: [20260330224158572310] Processing prediction for (28.6139, 77.209)
+2026-03-31 04:11:58,572 [INFO] services.weather: Fetching weather data from 2026-03-20 to 2026-03-29 for (28.6139, 77.209)
+2026-03-31 04:11:58,948 [INFO] services.weather: Successfully fetched 10 days of weather data
+2026-03-31 04:11:58,948 [INFO] __main__: [20260330224158572310] Fetched 10 days of weather data
+2026-03-31 04:11:58,949 [INFO] services.models: Preprocessed features: shape=(1, 12), total_precip=13.0mm, avg_humidity=59.1%
+2026-03-31 04:11:58,949 [INFO] __main__: [20260330224158572310] Preprocessed features for model input
+2026-03-31 04:11:58,949 [INFO] services.models: Heuristic (xgboost) prediction: prob=0.1836, conf=0.4430, factors=[('precipitation', '0.13'), ('max_daily_precip', '0.18'), ('humidity', '0.18'), ('soil_moisture', '0.38'), ('consecutive_rain', '0.29'), ('precip_trend', '0.00')]
+2026-03-31 04:11:58,950 [INFO] __main__: [20260330224158572310] XGBoost prediction: {'prediction': 'No Flood', 'probability': np.float64(0.1836), 'confidence': np.float64(0.443)}
+2026-03-31 04:11:58,950 [INFO] services.models: Heuristic (rl) prediction: prob=0.1994, conf=0.4208, factors=[('precipitation', '0.13'), ('max_daily_precip', '0.18'), ('humidity', '0.18'), ('soil_moisture', '0.38'), ('consecutive_rain', '0.29'), ('precip_trend', '0.00')]
+2026-03-31 04:11:58,950 [INFO] __main__: [20260330224158572310] RL prediction: {'prediction': 'No Flood', 'probability': np.float64(0.1994), 'confidence': np.float64(0.4208)}
+2026-03-31 04:11:58,950 [WARNING] services.gemini: Gemini API key not configured
+2026-03-31 04:11:58,950 [INFO] __main__: [20260330224158572310] Gemini analysis complete: source=xgboost
+2026-03-31 04:11:58,951 [INFO] __main__: [20260330224158572310] Prediction complete - Status: success, Final: No Flood
+2026-03-31 04:11:58,951 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 04:11:58] "POST /predict HTTP/1.1" 200 -
+2026-03-31 04:12:09,596 [INFO] __main__: [20260330224209596787] Received prediction request
+2026-03-31 04:12:09,597 [INFO] __main__: [20260330224209596787] Processing prediction for (28.6139, 77.209)
+2026-03-31 04:12:09,597 [INFO] services.weather: Fetching weather data from 2026-03-20 to 2026-03-29 for (28.6139, 77.209)
+2026-03-31 04:12:10,006 [INFO] services.weather: Successfully fetched 10 days of weather data
+2026-03-31 04:12:10,006 [INFO] __main__: [20260330224209596787] Fetched 10 days of weather data
+2026-03-31 04:12:10,006 [INFO] services.models: Preprocessed features: shape=(1, 12), total_precip=13.0mm, avg_humidity=59.1%
+2026-03-31 04:12:10,007 [INFO] __main__: [20260330224209596787] Preprocessed features for model input
+2026-03-31 04:12:10,007 [INFO] services.models: Heuristic (xgboost) prediction: prob=0.1836, conf=0.4430, factors=[('precipitation', '0.13'), ('max_daily_precip', '0.18'), ('humidity', '0.18'), ('soil_moisture', '0.38'), ('consecutive_rain', '0.29'), ('precip_trend', '0.00')]
+2026-03-31 04:12:10,007 [INFO] __main__: [20260330224209596787] XGBoost prediction: {'prediction': 'No Flood', 'probability': np.float64(0.1836), 'confidence': np.float64(0.443)}
+2026-03-31 04:12:10,007 [INFO] services.models: Heuristic (rl) prediction: prob=0.1994, conf=0.4208, factors=[('precipitation', '0.13'), ('max_daily_precip', '0.18'), ('humidity', '0.18'), ('soil_moisture', '0.38'), ('consecutive_rain', '0.29'), ('precip_trend', '0.00')]
+2026-03-31 04:12:10,007 [INFO] __main__: [20260330224209596787] RL prediction: {'prediction': 'No Flood', 'probability': np.float64(0.1994), 'confidence': np.float64(0.4208)}
+2026-03-31 04:12:10,008 [WARNING] services.gemini: Gemini API key not configured
+2026-03-31 04:12:10,008 [INFO] __main__: [20260330224209596787] Gemini analysis complete: source=xgboost
+2026-03-31 04:12:10,008 [INFO] __main__: [20260330224209596787] Prediction complete - Status: success, Final: No Flood
+2026-03-31 04:12:10,008 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 04:12:10] "POST /predict HTTP/1.1" 200 -
+2026-03-31 04:12:36,995 [INFO] __main__: [20260330224236995015] Received prediction request
+2026-03-31 04:12:36,995 [INFO] __main__: [20260330224236995015] Processing prediction for (28.6139, 77.209)
+2026-03-31 04:12:36,995 [INFO] services.weather: Fetching weather data from 2026-03-20 to 2026-03-29 for (28.6139, 77.209)
+2026-03-31 04:12:37,408 [INFO] services.weather: Successfully fetched 10 days of weather data
+2026-03-31 04:12:37,408 [INFO] __main__: [20260330224236995015] Fetched 10 days of weather data
+2026-03-31 04:12:37,409 [INFO] services.models: Preprocessed features: shape=(1, 12), total_precip=13.0mm, avg_humidity=59.1%
+2026-03-31 04:12:37,409 [INFO] __main__: [20260330224236995015] Preprocessed features for model input
+2026-03-31 04:12:37,409 [INFO] services.models: Heuristic (xgboost) prediction: prob=0.1836, conf=0.4430, factors=[('precipitation', '0.13'), ('max_daily_precip', '0.18'), ('humidity', '0.18'), ('soil_moisture', '0.38'), ('consecutive_rain', '0.29'), ('precip_trend', '0.00')]
+2026-03-31 04:12:37,409 [INFO] __main__: [20260330224236995015] XGBoost prediction: {'prediction': 'No Flood', 'probability': np.float64(0.1836), 'confidence': np.float64(0.443)}
+2026-03-31 04:12:37,410 [INFO] services.models: Heuristic (rl) prediction: prob=0.1994, conf=0.4208, factors=[('precipitation', '0.13'), ('max_daily_precip', '0.18'), ('humidity', '0.18'), ('soil_moisture', '0.38'), ('consecutive_rain', '0.29'), ('precip_trend', '0.00')]
+2026-03-31 04:12:37,410 [INFO] __main__: [20260330224236995015] RL prediction: {'prediction': 'No Flood', 'probability': np.float64(0.1994), 'confidence': np.float64(0.4208)}
+2026-03-31 04:12:37,410 [WARNING] services.gemini: Gemini API key not configured
+2026-03-31 04:12:37,410 [INFO] __main__: [20260330224236995015] Gemini analysis complete: source=xgboost
+2026-03-31 04:12:37,410 [INFO] __main__: [20260330224236995015] Prediction complete - Status: success, Final: No Flood
+2026-03-31 04:12:37,411 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 04:12:37] "POST /predict HTTP/1.1" 200 -
+2026-03-31 04:12:48,889 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 04:12:48] "GET /health HTTP/1.1" 200 -
+2026-03-31 11:37:51,670 [WARNING] services.models: XGBoost model not found at G:\VS Code Programs\Projects\Working\temp of flood detect app\Backend\flask_backend\models\xgboost_flood_model.json. Using heuristic fallback.
+2026-03-31 11:37:51,670 [WARNING] services.models: RL model not found at G:\VS Code Programs\Projects\Working\temp of flood detect app\Backend\flask_backend\models\rl_flood_model.pth. Using heuristic fallback.
+2026-03-31 11:37:51,672 [INFO] __main__: Starting Flood Prediction API on port 5000
+2026-03-31 11:37:51,741 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.25.162.0:5000
+2026-03-31 11:37:51,741 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-03-31 11:41:44,452 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 11:41:44] "[33mGET / HTTP/1.1[0m" 404 -
+2026-03-31 11:41:46,086 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 11:41:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-31 11:43:18,893 [WARNING] services.models: XGBoost model not found at G:\VS Code Programs\Projects\Working\temp of flood detect app\Backend\flask_backend\models\xgboost_flood_model.json. Using heuristic fallback.
+2026-03-31 11:43:18,894 [WARNING] services.models: RL model not found at G:\VS Code Programs\Projects\Working\temp of flood detect app\Backend\flask_backend\models\rl_flood_model.pth. Using heuristic fallback.
+2026-03-31 11:43:18,897 [INFO] __main__: Starting Flood Prediction API on port 5000
+2026-03-31 11:43:18,935 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.25.162.0:5000
+2026-03-31 11:43:18,936 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-03-31 11:44:05,599 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 11:44:05] "GET /health HTTP/1.1" 200 -
+2026-03-31 11:44:31,537 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 11:44:31] "[33mGET / HTTP/1.1[0m" 404 -
+2026-03-31 11:45:01,298 [WARNING] services.models: XGBoost model not found at G:\VS Code Programs\Projects\Working\temp of flood detect app\Backend\flask_backend\models\xgboost_flood_model.json. Using heuristic fallback.
+2026-03-31 11:45:01,299 [WARNING] services.models: RL model not found at G:\VS Code Programs\Projects\Working\temp of flood detect app\Backend\flask_backend\models\rl_flood_model.pth. Using heuristic fallback.
+2026-03-31 11:45:01,302 [INFO] __main__: Starting Flood Prediction API on port 5000
+2026-03-31 11:45:01,330 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.25.162.0:5000
+2026-03-31 11:45:01,332 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-03-31 11:45:23,107 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 11:45:23] "GET / HTTP/1.1" 200 -
+2026-03-31 11:47:03,425 [WARNING] services.models: XGBoost model not found at G:\VS Code Programs\Projects\Working\temp of flood detect app\Backend\flask_backend\models\xgboost_flood_model.json. Using heuristic fallback.
+2026-03-31 11:47:03,426 [WARNING] services.models: RL model not found at G:\VS Code Programs\Projects\Working\temp of flood detect app\Backend\flask_backend\models\rl_flood_model.pth. Using heuristic fallback.
+2026-03-31 11:47:03,428 [INFO] __main__: Starting Flood Prediction API on port 5000
+2026-03-31 11:47:03,462 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.25.162.0:5000
+2026-03-31 11:47:03,462 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-03-31 11:54:00,901 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 11:54:00] "GET / HTTP/1.1" 200 -
+2026-03-31 11:54:01,001 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 11:54:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-31 11:55:28,758 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 11:55:28] "OPTIONS /predict HTTP/1.1" 200 -
+2026-03-31 11:55:29,011 [INFO] __main__: [20260331062529010222] Received prediction request
+2026-03-31 11:55:29,014 [INFO] __main__: [20260331062529010222] Processing prediction for (23.07727949154719, 76.85131180014953)
+2026-03-31 11:55:29,014 [INFO] services.weather: Fetching weather data from 2026-03-21 to 2026-03-30 for (23.07727949154719, 76.85131180014953)
+2026-03-31 11:55:34,288 [INFO] services.weather: Successfully fetched 10 days of weather data
+2026-03-31 11:55:34,288 [INFO] __main__: [20260331062529010222] Fetched 10 days of weather data
+2026-03-31 11:55:34,318 [INFO] services.models: Preprocessed features: shape=(1, 12), total_precip=3.1mm, avg_humidity=35.4%
+2026-03-31 11:55:34,319 [INFO] __main__: [20260331062529010222] Preprocessed features for model input
+2026-03-31 11:55:34,320 [INFO] services.models: Heuristic (xgboost) prediction: prob=0.1193, conf=0.5330, factors=[('precipitation', '0.03'), ('max_daily_precip', '0.06'), ('humidity', '0.00'), ('soil_moisture', '0.73'), ('consecutive_rain', '0.14'), ('precip_trend', '0.03')]
+2026-03-31 11:55:34,321 [INFO] __main__: [20260331062529010222] XGBoost prediction: {'prediction': 'No Flood', 'probability': np.float64(0.1193), 'confidence': np.float64(0.533)}
+2026-03-31 11:55:34,322 [INFO] services.models: Heuristic (rl) prediction: prob=0.1383, conf=0.5064, factors=[('precipitation', '0.03'), ('max_daily_precip', '0.06'), ('humidity', '0.00'), ('soil_moisture', '0.73'), ('consecutive_rain', '0.14'), ('precip_trend', '0.03')]
+2026-03-31 11:55:34,323 [INFO] __main__: [20260331062529010222] RL prediction: {'prediction': 'No Flood', 'probability': np.float64(0.1383), 'confidence': np.float64(0.5064)}
+2026-03-31 11:55:35,758 [ERROR] services.gemini: Gemini API: Rate limited
+2026-03-31 11:55:35,758 [INFO] __main__: [20260331062529010222] Gemini analysis complete: source=xgboost
+2026-03-31 11:55:35,759 [INFO] __main__: [20260331062529010222] Prediction complete - Status: success, Final: No Flood
+2026-03-31 11:55:35,760 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 11:55:35] "POST /predict HTTP/1.1" 200 -

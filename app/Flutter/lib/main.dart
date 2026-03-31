@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'screens/flood_prediction_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -764,6 +765,28 @@ class _WeatherScreenState extends State<WeatherScreen> {
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          FloatingActionButton.extended(
+            heroTag: 'flood',
+            backgroundColor: const Color(0xFF1565C0),
+            icon: const Icon(Icons.flood, color: Colors.white),
+            label: const Text(
+              'Flood Risk',
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => FloodPredictionScreen(
+                    latitude: currentPosition.latitude,
+                    longitude: currentPosition.longitude,
+                    cityName: city,
+                  ),
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 10),
           FloatingActionButton(
             heroTag: 'location',
             backgroundColor: Colors.white,

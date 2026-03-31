@@ -1,0 +1,17 @@
+# Flask Backend - Flood Prediction API
+# Core
+Flask==3.1.0
+flask-cors==5.0.1
+python-dotenv==1.1.0
+
+# HTTP & Data
+requests==2.32.3
+numpy==2.2.3
+pandas==2.2.3
+
+# ML Models (optional - heuristic fallback available)
+# xgboost==2.1.4
+# torch==2.6.0
+
+# Production Server
+gunicorn==23.0.0

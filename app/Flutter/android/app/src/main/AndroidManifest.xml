@@ -5,7 +5,8 @@
     <application
         android:label="weather_app"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="1d64fef393c199842cc38e40d0c80392"/>
