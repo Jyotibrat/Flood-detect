@@ -2,6 +2,13 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
+// ╔══════════════════════════════════════════════════════════╗
+// ║  CHANGE THIS to the IP of the PC running the backend    ║
+// ║  Find it by running 'ipconfig' on that PC               ║
+// ╚══════════════════════════════════════════════════════════╝
+const String backendHost = '172.25.162.0';
+const int backendPort = 5000;
+
 /// Response model for the flood prediction API
 class FloodPredictionResponse {
   final LocationData location;
@@ -125,8 +132,7 @@ class SingleModelResult {
     );
   }
 
-  bool get isFlood =>
-      prediction?.toLowerCase() == 'flood';
+  bool get isFlood => prediction?.toLowerCase() == 'flood';
 
   bool get isAvailable => prediction != null;
 }
@@ -160,30 +166,27 @@ class ApiService {
   factory ApiService() => _instance;
   ApiService._internal();
 
-  /// Override base URL (e.g. for physical device or production)
+  /// Override base URL at runtime if needed
   String? _customBaseUrl;
   void setBaseUrl(String url) => _customBaseUrl = url;
 
-  /// Auto-detect the correct backend URL:
-  /// - Web / Desktop → http://localhost:5000
-  /// - Android emulator → http://10.0.2.2:5000 (maps to host localhost)
-  /// - Physical phone → must call setBaseUrl('http://<YOUR_PC_IP>:5000')
+  /// Returns the correct backend URL based on platform:
+  ///  - Web (Chrome)      → http://localhost:5000
+  ///  - Android (emulator or phone) → http://<backendHost>:5000
+  ///  - Desktop / iOS     → http://localhost:5000
   String get baseUrl {
     if (_customBaseUrl != null) return _customBaseUrl!;
-    return _detectBaseUrl();
-  }
 
-  static String _detectBaseUrl() {
-    // On web, defaultTargetPlatform can be anything – but kIsWeb is true
-    if (kIsWeb) return 'http://localhost:5000';
+    // Web runs in the browser on the same machine as backend
+    if (kIsWeb) return 'http://localhost:$backendPort';
 
-    // On native platforms, check if Android
+    // Android (emulator or real phone) → use the backend PC's IP
     if (defaultTargetPlatform == TargetPlatform.android) {
-      return 'http://10.0.2.2:5000';
+      return 'http://$backendHost:$backendPort';
     }
 
-    // iOS simulator, desktop, etc.
-    return 'http://localhost:5000';
+    // iOS / Desktop
+    return 'http://localhost:$backendPort';
   }
 
   /// Fetch flood prediction for a given location
